@@ -11,5 +11,5 @@ export class NewStaffInput {
  @Field(type => [String], { nullable: true })
   @IsOptional()
   @Length(30, 255)
-  lastName: string[];
+  lastName: string;
 }
