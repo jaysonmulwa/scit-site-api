@@ -5,9 +5,9 @@ import { StaffArgs } from './dto/staff.args';
 
 @Injectable()
 export class StaffService {
-  getHello(): string {
-    return 'Hello World!';
-  }
+  // getHello(): string {
+  //   return 'Hello World!';
+  // }
 
   async create(data: NewStaffInput): Promise<Staff> {
     return {} as any;
@@ -17,7 +17,7 @@ export class StaffService {
     return {} as any;
   }
 
-  async findAll(recipesArgs: StaffArgs): Promise<Staff[]> {
+  async findAll(staffArgs: StaffArgs): Promise<Staff[]> {
     return [] as Staff[];
   }
 

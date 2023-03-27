@@ -3,15 +3,13 @@ import { IsOptional, Length, MaxLength } from 'class-validator';
 
 @InputType()
 export class NewStaffInput {
-  @Field()
-  @MaxLength(30)
-  title: string;
-
   @Field({ nullable: true })
   @IsOptional()
   @Length(30, 255)
-  description?: string;
+  firstName?: string;
 
-  @Field(type => [String])
-  ingredients: string[];
+ @Field(type => [String], { nullable: true })
+  @IsOptional()
+  @Length(30, 255)
+  lastName: string[];
 }
