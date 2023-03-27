@@ -2,8 +2,43 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+input EditProgrammeInput {
+  programmeName: String!
+}
+
+input EditStaffInput {
+  firstName: String
+  lastName: [String!]
+}
+
+type Mutation {
+  createProgramme(data: NewProgrammeInput!): Programme!
+  createStaff(data: NewStaffInput!): Staff!
+  deleteProgramme(id: String!): Boolean!
+  deleteStaff(id: String!): Boolean!
+  editProgramme(data: EditProgrammeInput!, id: Float!): Programme!
+  editStaff(data: EditStaffInput!, id: Float!): Staff!
+}
+
+input NewProgrammeInput {
+  programmeName: String!
+}
+
+input NewStaffInput {
+  firstName: String
+  lastName: [String!]
+}
+
+type Programme {
+  id: Int!
+  programmeName: String
+}
+
 type Query {
-  staff: Staff!
+  programme(id: Float!): Programme!
+  programmes(skip: Int! = 0, take: Int! = 25): [Programme!]!
+  staff(id: Float!): Staff!
+  staffs(skip: Int! = 0, take: Int! = 25): [Staff!]!
 }
 
 type Staff {

@@ -13,7 +13,7 @@ export class StaffResolver {
 
     //Return one staff member
     @Query(returns => Staff)
-    async staff(id: number) {
+    async staff(@Args('id') id: number) {
         const staff = await this.staffService.findOneById(id);
         if (!staff) {
             throw new NotFoundException(id);
