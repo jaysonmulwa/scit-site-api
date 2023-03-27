@@ -3,7 +3,7 @@
 # ------------------------------------------------------
 
 input EditProgrammeInput {
-  programmeName: String!
+  programmeName: String
 }
 
 input EditStaffInput {
@@ -21,7 +21,7 @@ type Mutation {
 }
 
 input NewProgrammeInput {
-  programmeName: String!
+  programmeName: String
 }
 
 input NewStaffInput {

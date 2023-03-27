@@ -3,7 +3,7 @@ import { IsOptional, Length, MaxLength } from 'class-validator';
 
 @InputType()
 export class EditProgrammeInput {
-  @Field({ nullable: false })
+  @Field({ nullable: true })
   @Length(30, 255)
   programmeName?: string;
 
