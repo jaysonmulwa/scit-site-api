@@ -2,6 +2,14 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+input EditPaymentInput {
+  payment: String
+}
+
+input EditPaymentMethodInput {
+  paymentMethodName: String
+}
+
 input EditProgrammeInput {
   programmeName: String
 }
@@ -12,12 +20,26 @@ input EditStaffInput {
 }
 
 type Mutation {
+  createPayment(data: NewPaymentInput!): Payment!
+  createPaymentMethod(data: NewPaymentMethodInput!): PaymentMethod!
   createProgramme(data: NewProgrammeInput!): Programme!
   createStaff(data: NewStaffInput!): Staff!
+  deletePayment(id: String!): Boolean!
+  deletePaymentMethod(id: String!): Boolean!
   deleteProgramme(id: String!): Boolean!
   deleteStaff(id: String!): Boolean!
+  editPayment(data: EditPaymentInput!, id: Float!): Payment!
+  editPaymentMethod(data: EditPaymentMethodInput!, id: Float!): PaymentMethod!
   editProgramme(data: EditProgrammeInput!, id: Float!): Programme!
   editStaff(data: EditStaffInput!, id: Float!): Staff!
+}
+
+input NewPaymentInput {
+  payment: String
+}
+
+input NewPaymentMethodInput {
+  paymentMethodName: String
 }
 
 input NewProgrammeInput {
@@ -29,12 +51,26 @@ input NewStaffInput {
   lastName: [String!]
 }
 
+type Payment {
+  id: Int!
+  payment: String
+}
+
+type PaymentMethod {
+  id: Int!
+  paymentMethodName: String
+}
+
 type Programme {
   id: Int!
   programmeName: String
 }
 
 type Query {
+  payment(id: Float!): Payment!
+  paymentMethod(id: Float!): PaymentMethod!
+  paymentMethods(skip: Int! = 0, take: Int! = 25): [PaymentMethod!]!
+  payments(skip: Int! = 0, take: Int! = 25): [Payment!]!
   programme(id: Float!): Programme!
   programmes(skip: Int! = 0, take: Int! = 25): [Programme!]!
   staff(id: Float!): Staff!

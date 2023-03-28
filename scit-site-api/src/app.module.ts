@@ -4,14 +4,20 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { StaffModule } from './staff/staff.module';
 import { ProgrammesModule } from './programmes/programmes.module';
-import { Programme } from './programmes/programme.entity';
+import { PaymentsModule } from './payments/payment.module';
+import { PaymentMethodsModule} from './paymentMethods/paymentMethods.module';
 import { Staff } from './staff/staff.entity';
+import { Programme } from './programmes/programme.entity';
+import { Payment } from './payments/payment.entity';
+import { PaymentMethod } from './paymentMethods/paymentMethod.entity';
 
 
 @Module({
   imports: [
     StaffModule,
     ProgrammesModule,
+    PaymentsModule,
+    PaymentMethodsModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -19,7 +25,7 @@ import { Staff } from './staff/staff.entity';
       username: 'root',
       password: '',
       database: 'test',
-      entities: [ Staff, Programme ],
+      entities: [ Staff, Programme , Payment, PaymentMethod],
       synchronize: true, //not to be used in production
     }),
     GraphQLModule.forRoot({
