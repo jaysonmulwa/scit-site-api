@@ -2,6 +2,15 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Application {
+  applicationType: String
+  id: Int!
+}
+
+input EditApplicationInput {
+  applicationType: String
+}
+
 input EditPaymentInput {
   payment: String
 }
@@ -20,18 +29,25 @@ input EditStaffInput {
 }
 
 type Mutation {
+  createApplication(data: NewApplicationInput!): Application!
   createPayment(data: NewPaymentInput!): Payment!
   createPaymentMethod(data: NewPaymentMethodInput!): PaymentMethod!
   createProgramme(data: NewProgrammeInput!): Programme!
   createStaff(data: NewStaffInput!): Staff!
+  deleteApplication(id: String!): Boolean!
   deletePayment(id: String!): Boolean!
   deletePaymentMethod(id: String!): Boolean!
   deleteProgramme(id: String!): Boolean!
   deleteStaff(id: String!): Boolean!
+  editApplication(data: EditApplicationInput!, id: Float!): Application!
   editPayment(data: EditPaymentInput!, id: Float!): Payment!
   editPaymentMethod(data: EditPaymentMethodInput!, id: Float!): PaymentMethod!
   editProgramme(data: EditProgrammeInput!, id: Float!): Programme!
   editStaff(data: EditStaffInput!, id: Float!): Staff!
+}
+
+input NewApplicationInput {
+  applicationType: String
 }
 
 input NewPaymentInput {
@@ -67,6 +83,8 @@ type Programme {
 }
 
 type Query {
+  application(id: Float!): Application!
+  applications(skip: Int! = 0, take: Int! = 25): [Application!]!
   payment(id: Float!): Payment!
   paymentMethod(id: Float!): PaymentMethod!
   paymentMethods(skip: Int! = 0, take: Int! = 25): [PaymentMethod!]!

@@ -6,10 +6,12 @@ import { StaffModule } from './staff/staff.module';
 import { ProgrammesModule } from './programmes/programmes.module';
 import { PaymentsModule } from './payments/payment.module';
 import { PaymentMethodsModule} from './paymentMethods/paymentMethods.module';
+import { ApplicationsModule } from './applications/applications.module';
 import { Staff } from './staff/staff.entity';
 import { Programme } from './programmes/programme.entity';
 import { Payment } from './payments/payment.entity';
 import { PaymentMethod } from './paymentMethods/paymentMethod.entity';
+import { Application } from './applications/applications.entity';
 
 
 @Module({
@@ -18,6 +20,7 @@ import { PaymentMethod } from './paymentMethods/paymentMethod.entity';
     ProgrammesModule,
     PaymentsModule,
     PaymentMethodsModule,
+    ApplicationsModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -25,7 +28,7 @@ import { PaymentMethod } from './paymentMethods/paymentMethod.entity';
       username: 'root',
       password: '',
       database: 'test',
-      entities: [ Staff, Programme , Payment, PaymentMethod],
+      entities: [ Staff, Programme , Payment, PaymentMethod, Application],
       synchronize: true, //not to be used in production
     }),
     GraphQLModule.forRoot({
