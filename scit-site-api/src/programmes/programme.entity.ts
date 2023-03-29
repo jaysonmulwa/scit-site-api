@@ -7,4 +7,10 @@ export class Programme {
     
     @Column({ length: 100, type: 'varchar'})
     programmeName: string;
+
+    @Column({ length: 100, type: 'varchar'})
+    programmeDescription: string;
+
+    @Column({ length: 10, type: 'int'})
+    departmentId: number;
 }

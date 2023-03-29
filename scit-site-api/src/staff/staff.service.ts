@@ -27,6 +27,8 @@ export class StaffService {
     const staff = new Staff();
     staff.firstName = data.firstName;
     staff.lastName = data.lastName;
+    staff.speciality = data.speciality;
+    staff.departmentId = data.departmentId;
     return this.staffRepository.save(staff);
   }
 
@@ -39,6 +41,8 @@ export class StaffService {
     staff.id = id;
     staff.firstName = data.firstName;
     staff.lastName = data.lastName;
+    staff.speciality = data.speciality;
+    staff.departmentId = data.departmentId;
     return this.staffRepository.save(staff);
   }
 }

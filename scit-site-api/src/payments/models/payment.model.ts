@@ -6,5 +6,18 @@ export class Payment {
     id: number;
     
     @Field({ nullable: true })
-    payment ?: string;
+    transactionDate ?: string;
+
+    @Field({ nullable: true })
+    transactionAmount ?: number;
+
+    @Field({ nullable: true })
+    transactionStatus ?: string;
+
+    @Field({ nullable: true })
+    transactionReference ?: string;
+
+    @Field({ nullable: true })
+    paymentMethodId ?: number;
+
 }

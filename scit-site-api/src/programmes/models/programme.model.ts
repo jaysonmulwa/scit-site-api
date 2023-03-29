@@ -7,4 +7,11 @@ export class Programme {
 
   @Field({ nullable: true })
   programmeName ?: string;
+
+  @Field({ nullable: true })
+  programmeDescription: string;
+
+  @Field({ nullable: true })
+  departmentId: number;
+
 }

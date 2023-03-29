@@ -11,4 +11,10 @@ export class Staff {
   @Field({ nullable: true })
   lastName?: string;
 
+  @Field({ nullable: true })
+  speciality?: string;
+
+  @Field({ nullable: true })
+  departmentId?: number;
+
 }

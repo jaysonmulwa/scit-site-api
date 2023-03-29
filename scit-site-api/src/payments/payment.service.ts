@@ -23,7 +23,11 @@ export class PaymentService {
 
     async create(data: NewPaymentInput): Promise<Payment> {
         const payment = new Payment();
-        payment.payment = data.payment;
+        payment.transactionDate = data.transactionDate;
+        payment.transactionAmount = data.transactionAmount;
+        payment.transactionStatus = data.transactionStatus;
+        payment.transactionReference = data.transactionReference;
+        payment.paymentMethodId = data.paymentMethodId;
         return this.paymentRepository.save(payment);
     }
 
@@ -34,7 +38,11 @@ export class PaymentService {
     async edit(id: number, data: EditPaymentInput): Promise<Payment> {
         const payment = new Payment();
         payment.id = id;
-        payment.payment = data.payment;
+        payment.transactionDate = data.transactionDate;
+        payment.transactionAmount = data.transactionAmount;
+        payment.transactionStatus = data.transactionStatus;
+        payment.transactionReference = data.transactionReference;
+        payment.paymentMethodId = data.paymentMethodId;
         return this.paymentRepository.save(payment);
     }
 }

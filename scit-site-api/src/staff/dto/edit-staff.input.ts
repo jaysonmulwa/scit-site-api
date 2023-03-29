@@ -8,8 +8,18 @@ export class EditStaffInput {
   @Length(30, 255)
   firstName?: string;
 
- @Field(type => [String], { nullable: true })
+  @Field(type => [String], { nullable: true })
   @IsOptional()
   @Length(30, 255)
   lastName: string;
+
+  @Field({ nullable: true })
+  @IsOptional()
+  @Length(30, 255)
+  speciality: string;
+
+  @Field({ nullable: true })
+  @IsOptional()
+  @Length(30, 255)
+  departmentId: number;
 }
