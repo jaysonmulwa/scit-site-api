@@ -3,7 +3,7 @@ Resources:
 - [DONE]academics. (department, activity type)
 - [DONE]departments.
 - [DONE]users (to enaable login).
-- auth - Login/Logout students and staff.
+- auth - Login/Logout students and staff, authguard
 
 other:
 - Add relationships and more data fields to existing relationships.

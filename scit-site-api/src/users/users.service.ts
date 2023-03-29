@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Users } from './users.entity';
 import { NewUserInput } from './dto/new-user.input';
 import { EditUserInput } from './dto/edit-user.input';
-import { UserArgs } from './dto/users.args';
+import { UserArgs } from './dto/user.args';
 import { Repository } from 'typeorm';
 
 @Injectable()
@@ -17,6 +17,10 @@ export class UsersService {
  
   async findOneById(id: number): Promise<Users> {
     return this.usersRepository.findOneBy({ id: id });
+  }
+
+  async findOneByEmail(email: string): Promise<Users> {
+    return this.usersRepository.findOneBy({ email: email });
   }
 
   async findAll(usersArgs: UserArgs): Promise<Users[]> {
