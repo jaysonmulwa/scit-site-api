@@ -7,14 +7,15 @@ import { ProgrammesModule } from './programmes/programmes.module';
 import { PaymentsModule } from './payments/payment.module';
 import { PaymentMethodsModule} from './paymentMethods/paymentMethods.module';
 import { ApplicationsModule } from './applications/applications.module';
-import { AcademicssModule } from './academics/academics.module';
+import { AcademicsModule } from './academics/academics.module';
+import { DepartmentsModule } from './departments/departments.module';
 import { Staff } from './staff/staff.entity';
 import { Programme } from './programmes/programme.entity';
 import { Payment } from './payments/payment.entity';
 import { PaymentMethod } from './paymentMethods/paymentMethod.entity';
 import { Application } from './applications/applications.entity';
 import { Academics } from './academics/academics.entity';
-
+import { Department } from './departments/departments.entity';
 
 @Module({
   imports: [
@@ -23,7 +24,8 @@ import { Academics } from './academics/academics.entity';
     PaymentsModule,
     PaymentMethodsModule,
     ApplicationsModule,
-    AcademicssModule,
+    AcademicsModule,
+    DepartmentsModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -31,7 +33,7 @@ import { Academics } from './academics/academics.entity';
       username: 'root',
       password: '',
       database: 'test',
-      entities: [ Staff, Programme , Payment, PaymentMethod, Application, Academics],
+      entities: [ Staff, Programme , Payment, PaymentMethod, Application, Academics, Department],
       synchronize: true, //not to be used in production
     }),
     GraphQLModule.forRoot({

@@ -9,4 +9,4 @@ import { Academics } from './academics.entity';
     providers: [AcademicsService, AcademicsResolver],
 })
 
-export class AcademicssModule {}
+export class AcademicsModule {}
