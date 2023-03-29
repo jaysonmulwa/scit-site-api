@@ -1,12 +1,12 @@
 **Phase 1:**
 Resources:
-- academics. (department, activity type)
-- users (to enaable login).
-- departments.
+- [DONE]academics. (department, activity type)
+- [DONE]departments.
+- [DONE]users (to enaable login).
+- auth - Login/Logout students and staff.
 
+other:
 - Add relationships and more data fields to existing relationships.
-- Login/Logout students and staff.
-
 - Retest all endpoints.
 
 
