@@ -7,11 +7,13 @@ import { ProgrammesModule } from './programmes/programmes.module';
 import { PaymentsModule } from './payments/payment.module';
 import { PaymentMethodsModule} from './paymentMethods/paymentMethods.module';
 import { ApplicationsModule } from './applications/applications.module';
+import { AcademicssModule } from './academics/academics.module';
 import { Staff } from './staff/staff.entity';
 import { Programme } from './programmes/programme.entity';
 import { Payment } from './payments/payment.entity';
 import { PaymentMethod } from './paymentMethods/paymentMethod.entity';
 import { Application } from './applications/applications.entity';
+import { Academics } from './academics/academics.entity';
 
 
 @Module({
@@ -21,6 +23,7 @@ import { Application } from './applications/applications.entity';
     PaymentsModule,
     PaymentMethodsModule,
     ApplicationsModule,
+    AcademicssModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -28,7 +31,7 @@ import { Application } from './applications/applications.entity';
       username: 'root',
       password: '',
       database: 'test',
-      entities: [ Staff, Programme , Payment, PaymentMethod, Application],
+      entities: [ Staff, Programme , Payment, PaymentMethod, Application, Academics],
       synchronize: true, //not to be used in production
     }),
     GraphQLModule.forRoot({

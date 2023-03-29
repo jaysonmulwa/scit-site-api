@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
-import { ApplicationService } from './academics.service';
-import { ApplicationResolver } from './academics.resolver';
+import { AcademicsService } from './academics.service';
+import { AcademicsResolver } from './academics.resolver';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Application } from './academics.entity';
+import { Academics } from './academics.entity';
 
 @Module({
-    imports: [TypeOrmModule.forFeature([Application])],
-    providers: [ApplicationService, ApplicationResolver],
+    imports: [TypeOrmModule.forFeature([Academics])],
+    providers: [AcademicsService, AcademicsResolver],
 })
 
-export class ApplicationsModule {}
+export class AcademicssModule {}
