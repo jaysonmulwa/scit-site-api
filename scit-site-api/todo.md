@@ -1,7 +1,7 @@
 **Phase 1:**
 Resources:
 - academics. (department, activity type)
-- accounts (to enaable login).
+- users (to enaable login).
 - departments.
 
 - Add relationships and more data fields to existing relationships.
@@ -16,7 +16,6 @@ Resources:
 
 **Phase 3:**
 - Client side
-
 
 Misc:
 VueJS? NextJS? NuxtJS? ReactJS? 
