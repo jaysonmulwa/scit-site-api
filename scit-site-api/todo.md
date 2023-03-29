@@ -10,10 +10,8 @@ Resources:
 - Retest all endpoints.
 
 
-
 **Phase 2:**
 - Admin Site
-
 
 
 **Phase 3:**
