@@ -5,10 +5,10 @@ export class Department {
     @PrimaryGeneratedColumn({ type: 'int'})
     id: number;
 
-    @Column({ length: 100, type: 'varchar'})
+    @Column({ type: 'varchar'})
     name: string;
 
-    @Column({ length: 100, type: 'varchar'})
+    @Column({ type: 'varchar'})
     description: string;
     
 }

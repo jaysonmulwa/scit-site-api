@@ -5,16 +5,16 @@ export class Academics {
     @PrimaryGeneratedColumn({ type: 'int'})
     id: number;
 
-    @Column({ length: 100, type: 'varchar'})
+    @Column({ type: 'varchar'})
     name: string;
 
-    @Column({ length: 100, type: 'varchar'})
+    @Column({ type: 'varchar'})
     description: string;
 
-    @Column({ length: 100, type: 'varchar'})
+    @Column({ type: 'varchar'})
     activityType: string;
 
-    @Column({ length: 10, type: 'integer'})
+    @Column({ type: 'integer'})
     departmentId: number;
     
 }

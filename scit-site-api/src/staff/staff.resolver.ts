@@ -5,6 +5,8 @@ import { Staff } from './models/staff.model';
 import { StaffArgs } from './dto/staff.args';
 import { NewStaffInput } from './dto/new-staff.input';
 import { EditStaffInput } from './dto/edit-staff.input';
+//import { AuthGuard } from 'src/auth/auth.guard';
+//import { UseGuards } from '@nestjs/common/decorators';
 
 
 @Resolver(of => Staff)
@@ -12,6 +14,7 @@ export class StaffResolver {
     constructor(private readonly staffService: StaffService) {}
 
     //Return one staff member
+    //@UseGuards(AuthGuard)
     @Query(returns => Staff)
     async staff(@Args('id') id: number) {
         const staff = await this.staffService.findOneById(id);

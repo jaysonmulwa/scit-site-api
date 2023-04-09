@@ -5,12 +5,12 @@ export class Programme {
     @PrimaryGeneratedColumn({ type: 'int'})
     id: number;
     
-    @Column({ length: 100, type: 'varchar'})
+    @Column({ type: 'varchar', nullable: true})
     programmeName: string;
 
-    @Column({ length: 100, type: 'varchar'})
+    @Column({ type: 'varchar'})
     programmeDescription: string;
 
-    @Column({ length: 10, type: 'int'})
+    @Column({ type: 'int'})
     departmentId: number;
 }

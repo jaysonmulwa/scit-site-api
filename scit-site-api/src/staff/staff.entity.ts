@@ -5,15 +5,15 @@ export class Staff {
     @PrimaryGeneratedColumn({ type: 'int'})
     id: number;
     
-    @Column({ nullable: false, length: 100, type: 'varchar'})
+    @Column({ nullable: false, type: 'varchar'})
     firstName: string;
     
-    @Column({ length: 50, default: '00000000', type: 'varchar'})
+    @Column({ default: '00000000', type: 'varchar'})
     lastName: string;
 
-    @Column({ length: 100, type: 'varchar'})
+    @Column({ type: 'varchar'})
     speciality: string;
 
-    @Column({ length: 10, type: 'integer'})
+    @Column({ type: 'integer'})
     departmentId: number;
 }

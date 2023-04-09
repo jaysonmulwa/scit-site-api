@@ -8,6 +8,7 @@ Resources:
 other:
 - Add relationships and more data fields to existing relationships.
 - Retest all endpoints.
+- generate swagger
 
 
 **Phase 2:**

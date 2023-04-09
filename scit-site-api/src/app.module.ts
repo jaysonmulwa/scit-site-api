@@ -45,6 +45,7 @@ import { Users } from './users/users.entity';
       playground: true,
       autoSchemaFile: 'schema.gql',
       sortSchema: true,
+      context: ({ req }) => ({ req }),
     }),
   ],
 })

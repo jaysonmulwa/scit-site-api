@@ -2,17 +2,48 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Academics {
+  activityType: String
+  departmentId: Float
+  description: String
+  id: Int!
+  name: String
+}
+
 type Application {
   applicationType: String
   id: Int!
+}
+
+type Department {
+  description: String
+  id: Int!
+  name: String
+}
+
+input EditAcademicsInput {
+  activityType: String
+  departmentId: Float
+  description: String
+  name: String
 }
 
 input EditApplicationInput {
   applicationType: String
 }
 
+input EditDepartmentInput {
+  departmentId: Float
+  description: String
+  name: String
+}
+
 input EditPaymentInput {
-  payment: String
+  paymentMethodId: Float
+  transactionAmount: Float!
+  transactionDate: String
+  transactionReference: String
+  transactionStatus: String
 }
 
 input EditPaymentMethodInput {
@@ -20,38 +51,76 @@ input EditPaymentMethodInput {
 }
 
 input EditProgrammeInput {
+  departmentId: Float
+  programmeDescription: String
   programmeName: String
 }
 
 input EditStaffInput {
+  departmentId: Float
   firstName: String
   lastName: [String!]
+  speciality: String
+}
+
+input EditUserInput {
+  email: String!
+  firstName: String
+  lastName: String
+  password: String!
+  role: String
 }
 
 type Mutation {
+  createAcademics(data: NewAcademicsInput!): Academics!
   createApplication(data: NewApplicationInput!): Application!
+  createDepartment(data: NewDepartmentInput!): Department!
   createPayment(data: NewPaymentInput!): Payment!
   createPaymentMethod(data: NewPaymentMethodInput!): PaymentMethod!
   createProgramme(data: NewProgrammeInput!): Programme!
   createStaff(data: NewStaffInput!): Staff!
+  createUsers(data: NewUserInput!): User!
+  deleteAcademics(id: String!): Boolean!
   deleteApplication(id: String!): Boolean!
+  deleteDepartment(id: String!): Boolean!
   deletePayment(id: String!): Boolean!
   deletePaymentMethod(id: String!): Boolean!
   deleteProgramme(id: String!): Boolean!
   deleteStaff(id: String!): Boolean!
+  deleteUsers(id: String!): Boolean!
+  editAcademics(data: EditAcademicsInput!, id: Float!): Academics!
   editApplication(data: EditApplicationInput!, id: Float!): Application!
+  editDepartment(data: EditDepartmentInput!, id: Float!): Department!
   editPayment(data: EditPaymentInput!, id: Float!): Payment!
   editPaymentMethod(data: EditPaymentMethodInput!, id: Float!): PaymentMethod!
   editProgramme(data: EditProgrammeInput!, id: Float!): Programme!
   editStaff(data: EditStaffInput!, id: Float!): Staff!
+  editUsers(data: EditUserInput!, id: Float!): User!
+}
+
+input NewAcademicsInput {
+  activityType: String
+  departmentId: Float
+  description: String
+  name: String
 }
 
 input NewApplicationInput {
   applicationType: String
 }
 
+input NewDepartmentInput {
+  departmentId: Float
+  description: String
+  name: String
+}
+
 input NewPaymentInput {
-  payment: String
+  paymentMethodId: Float
+  transactionAmount: Float!
+  transactionDate: String
+  transactionReference: String
+  transactionStatus: String
 }
 
 input NewPaymentMethodInput {
@@ -59,17 +128,33 @@ input NewPaymentMethodInput {
 }
 
 input NewProgrammeInput {
+  departmentId: Float
+  programmeDescription: String
   programmeName: String
 }
 
 input NewStaffInput {
+  departmentId: Float
   firstName: String
   lastName: [String!]
+  speciality: String
+}
+
+input NewUserInput {
+  email: String!
+  firstName: String
+  lastName: String
+  password: String!
+  role: String
 }
 
 type Payment {
   id: Int!
-  payment: String
+  paymentMethodId: Float
+  transactionAmount: Float
+  transactionDate: String
+  transactionReference: String
+  transactionStatus: String
 }
 
 type PaymentMethod {
@@ -78,13 +163,19 @@ type PaymentMethod {
 }
 
 type Programme {
+  departmentId: Float
   id: Int!
+  programmeDescription: String
   programmeName: String
 }
 
 type Query {
+  academics(id: Float!): Academics!
+  academicss(skip: Int! = 0, take: Int! = 25): [Academics!]!
   application(id: Float!): Application!
   applications(skip: Int! = 0, take: Int! = 25): [Application!]!
+  department(id: Float!): Department!
+  departments(skip: Int! = 0, take: Int! = 25): [Department!]!
   payment(id: Float!): Payment!
   paymentMethod(id: Float!): PaymentMethod!
   paymentMethods(skip: Int! = 0, take: Int! = 25): [PaymentMethod!]!
@@ -93,10 +184,23 @@ type Query {
   programmes(skip: Int! = 0, take: Int! = 25): [Programme!]!
   staff(id: Float!): Staff!
   staffs(skip: Int! = 0, take: Int! = 25): [Staff!]!
+  users(id: Float!): User!
+  userss(skip: Int! = 0, take: Int! = 25): [User!]!
 }
 
 type Staff {
+  departmentId: Float
   firstName: String
   id: Int!
   lastName: String
+  speciality: String
+}
+
+type User {
+  email: String!
+  firstName: String
+  id: Int!
+  lastName: String
+  password: String!
+  role: String
 }

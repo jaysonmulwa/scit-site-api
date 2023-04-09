@@ -5,6 +5,6 @@ export class Application {
     @PrimaryGeneratedColumn({ type: 'int'})
     id: number;
     
-    @Column({ length: 100, type: 'varchar'})
+    @Column({ type: 'varchar'})
     applicationType: string;
 }

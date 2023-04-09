@@ -8,7 +8,7 @@ export class NewUserInput {
   @Length(30, 255)
   firstName?: string;
 
-  @Field(type => [String], { nullable: true })
+  @Field({ nullable: true })
   @IsOptional()
   @Length(30, 255)
   lastName: string;
