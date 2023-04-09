@@ -1,0 +1,1090 @@
+{
+	"info": {
+		"_postman_id": "14c143fb-b2ab-4863-bf8e-89f7f01fd561",
+		"name": "scit-site",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2156905"
+	},
+	"item": [
+		{
+			"name": "Staff",
+			"item": [
+				{
+					"name": "staff GET",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query StaffById {\r\n    staff (id: 1) {\r\n        firstName,\r\n        lastName\r\n    }\r\n    staff (id: 2) {\r\n        firstName,\r\n        lastName\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "staff GET all",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetAllStaff {\r\n    staffs {\r\n        firstName,\r\n        lastName\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "staff DELETE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteStaff {\r\n    deleteStaff (id: \"1\")\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "staff EDIT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation editStaff ($editStaffInput: EditStaffInput!) {\r\n    editStaff (data: $editStaffInput, id: 1) {\r\n        firstName,\r\n        lastName\r\n    }\r\n}",
+								"variables": "{\r\n    \"id\": 1,\r\n    \"editStaffInput\": {\r\n        \"firstName\": \"a\",\r\n        \"lastName\": \"b\"\r\n    }\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "staff Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createStaff ($newStaffInput: NewStaffInput!) {\r\n    createStaff (data: $newStaffInput) {\r\n        firstName,\r\n        lastName\r\n    }\r\n}",
+								"variables": "{\r\n    \"newStaffInput\": {\r\n        \"firstName\": \"a\",\r\n        \"lastName\": \"b\"\r\n    }\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Users GET",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query UsersById {\r\n    users (id: 1) {\r\n        firstName,\r\n        lastName\r\n    }\r\n    staff (id: 2) {\r\n        firstName,\r\n        lastName\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users GET all",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetAllUsers {\r\n    users {\r\n        firstName,\r\n        lastName,\r\n        email\r\n        role\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users DELETE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteStaff {\r\n    deleteStaff (id: \"1\")\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users EDIT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation editUsers ($editUserInput: EditUserInput!) {\r\n    editUsers (data: $editUserInput, id: 1) {\r\n        firstName,\r\n        lastName,\r\n        email,\r\n        password,\r\n        role\r\n    }\r\n}",
+								"variables": "{\r\n    \"id\": 1,\r\n    \"editUserInput\": {\r\n        \"firstName\": \"Jayson\",\r\n        \"lastName\": \"Mulwa\",\r\n        \"email\": \"jayson@gmail.com\",\r\n        \"password\": \"a\",\r\n        \"role\": \"a\"\r\n    }\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createUsers ($newUserInput: NewUserInput!) {\r\n    createUsers (data: $newUserInput) {\r\n        firstName,\r\n        lastName,\r\n        email,\r\n        password,\r\n        role\r\n    }\r\n}",
+								"variables": "{\r\n    \"newUserInput\": {\r\n        \"firstName\": \"Jayson\",\r\n        \"lastName\": \"Mulwa\",\r\n        \"email\": \"jayson@gmail.com\",\r\n        \"password\": \"a\",\r\n        \"role\": \"a\"\r\n    }\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Programmes",
+			"item": [
+				{
+					"name": "programme GET",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query Staff {\r\n    staff {\r\n        firstName,\r\n        lastName\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "programme GET all",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query Programme {\r\n    programmes {\r\n        programmeName,\r\n        programmeDescription\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "programme DELETE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteProgramme {\r\n    deleteProgramme (id: \"1\")\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "programmes EDIT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation editProgramme ($editProgrammeInput: EditProgrammeInput!) {\r\n    editProgramme (data: $editProgrammeInput, id: 1) {\r\n        programmeName\r\n    }\r\n}",
+								"variables": "{\r\n    \"id\": 1,\r\n    \"editProgrammeInput\": {\r\n        \"programmeName\": \"a\"\r\n    }\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "programmes Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createProgramme ($newProgrammeInput: NewProgrammeInput!) {\r\n    createProgramme (data: $newProgrammeInput) {\r\n        programmeName,\r\n    }\r\n}",
+								"variables": "{\r\n    \"newProgrammeInput\": {\r\n        \"programmeName\": \"a\"\r\n    }\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Academics",
+			"item": [
+				{
+					"name": "GET",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query Staff {\r\n    staff {\r\n        firstName,\r\n        lastName\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query Programme {\r\n    programmes {\r\n        programmeName,\r\n        programmeDescription\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteProgramme {\r\n    deleteProgramme (id: \"1\")\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation editProgramme ($editProgrammeInput: EditProgrammeInput!) {\r\n    editProgramme (data: $editProgrammeInput, id: 1) {\r\n        programmeName\r\n    }\r\n}",
+								"variables": "{\r\n    \"id\": 1,\r\n    \"editProgrammeInput\": {\r\n        \"programmeName\": \"a\"\r\n    }\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createProgramme ($newProgrammeInput: NewProgrammeInput!) {\r\n    createProgramme (data: $newProgrammeInput) {\r\n        programmeName,\r\n    }\r\n}",
+								"variables": "{\r\n    \"newProgrammeInput\": {\r\n        \"programmeName\": \"a\"\r\n    }\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Applications",
+			"item": [
+				{
+					"name": "GET",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query Staff {\r\n    staff {\r\n        firstName,\r\n        lastName\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query Programme {\r\n    programmes {\r\n        programmeName,\r\n        programmeDescription\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteProgramme {\r\n    deleteProgramme (id: \"1\")\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation editProgramme ($editProgrammeInput: EditProgrammeInput!) {\r\n    editProgramme (data: $editProgrammeInput, id: 1) {\r\n        programmeName\r\n    }\r\n}",
+								"variables": "{\r\n    \"id\": 1,\r\n    \"editProgrammeInput\": {\r\n        \"programmeName\": \"a\"\r\n    }\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createProgramme ($newProgrammeInput: NewProgrammeInput!) {\r\n    createProgramme (data: $newProgrammeInput) {\r\n        programmeName,\r\n    }\r\n}",
+								"variables": "{\r\n    \"newProgrammeInput\": {\r\n        \"programmeName\": \"a\"\r\n    }\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Departments",
+			"item": [
+				{
+					"name": "GET",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query Departments {\r\n    department (id: 1) {\r\n        name,\r\n        description\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query Departments {\r\n    departments {\r\n        name,\r\n        description\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteProgramme {\r\n    deleteProgramme (id: \"1\")\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation editProgramme ($editProgrammeInput: EditProgrammeInput!) {\r\n    editProgramme (data: $editProgrammeInput, id: 1) {\r\n        programmeName\r\n    }\r\n}",
+								"variables": "{\r\n    \"id\": 1,\r\n    \"editProgrammeInput\": {\r\n        \"programmeName\": \"a\"\r\n    }\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createDepartment ($newDepartmentInput: NewDepartmentInput!) {\r\n    createDepartment (data: $newDepartmentInput) {\r\n        name,\r\n    }\r\n}",
+								"variables": "{\r\n    \"newDepartmentInput\": {\r\n        \"name\": \"a\"\r\n    }\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment methods",
+			"item": [
+				{
+					"name": "GET",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query Staff {\r\n    staff {\r\n        firstName,\r\n        lastName\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query Programme {\r\n    programmes {\r\n        programmeName,\r\n        programmeDescription\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteProgramme {\r\n    deleteProgramme (id: \"1\")\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation editProgramme ($editProgrammeInput: EditProgrammeInput!) {\r\n    editProgramme (data: $editProgrammeInput, id: 1) {\r\n        programmeName\r\n    }\r\n}",
+								"variables": "{\r\n    \"id\": 1,\r\n    \"editProgrammeInput\": {\r\n        \"programmeName\": \"a\"\r\n    }\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createProgramme ($newProgrammeInput: NewProgrammeInput!) {\r\n    createProgramme (data: $newProgrammeInput) {\r\n        programmeName,\r\n    }\r\n}",
+								"variables": "{\r\n    \"newProgrammeInput\": {\r\n        \"programmeName\": \"a\"\r\n    }\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "Payments GET",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query Payments {\r\n    payments {\r\n        transactionDate,\r\n        transactionAmount,\r\n        transactionStatus,\r\n        transactionReference\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payments GET all",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query Programme {\r\n    programmes {\r\n        programmeName,\r\n        programmeDescription\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payments DELETE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteProgramme {\r\n    deleteProgramme (id: \"1\")\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payments EDIT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation editProgramme ($editProgrammeInput: EditProgrammeInput!) {\r\n    editProgramme (data: $editProgrammeInput, id: 1) {\r\n        programmeName\r\n    }\r\n}",
+								"variables": "{\r\n    \"id\": 1,\r\n    \"editProgrammeInput\": {\r\n        \"programmeName\": \"a\"\r\n    }\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payments Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation createPayments ($newPaymentInput: NewPaymentInput!) {\r\n    createPayment (data: $newPaymentInput) {\r\n        transactionAmount,\r\n        transactionDate,\r\n        transactionReference,\r\n        transactionStatus,\r\n        paymentMethodId\r\n    }\r\n}",
+								"variables": "{\r\n    \"newPaymentInput\": {\r\n        \"transactionReference\": \"a\",\r\n        \" paymentMethodId\": \"1\"\r\n    }\r\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
